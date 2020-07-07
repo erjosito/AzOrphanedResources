@@ -12,12 +12,14 @@ This repository contains one single PowerShell script that is designed to serve 
 
 ## What the script does
 
-It finds orphaned objects in Azures:
+It finds (and optionally delete) orphaned objects in Azure:
 
 * Disks that are not connected to any VM
 * NSGs not applied to a subnet or a NIC
 * Public IP addresses not connected to a NIC
 * NICs not connected to any VM
+
+The script uses [Azure Resource Graph](https://docs.microsoft.com/azure/governance/resource-graph/) to find Azure resources.
 
 ## Next steps
 
