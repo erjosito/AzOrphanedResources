@@ -76,7 +76,7 @@ function Inspect-Resources {
                     Write-Output "$ObjectName $($Resource.name) in resource group $($Resource.resourceGroup) seems to be orphan, tagging as $($TagName)/$($TagValue)"
                     $Tags = (Get-AzResource -ResourceId $Resource.id).Tags
                     # Add or modify existing key
-                    if ($Tags.ContainsKey($TagName)) {
+                    if ($Tags -ne $null -and $Tags.ContainsKey($TagName)) {
                         $Tags[$TagName] = $TagValue
                     } else {
                         $Tags += @{$TagName=$TagValue}
