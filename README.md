@@ -19,6 +19,12 @@ It finds (and optionally delete) orphaned objects in Azure:
 * Public IP addresses not connected to a NIC
 * NICs not connected to any VM
 
+## Required PowerShell Modules
+Ensure the following PowerShell modules are installed into your Azure Automation account:
+* Az.Accounts
+* Az.ResourceGraph
+* Az.Resources
+
 The script uses [Azure Resource Graph](https://docs.microsoft.com/azure/governance/resource-graph/) to find Azure resources.
 
 ## Next steps
